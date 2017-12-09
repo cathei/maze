@@ -1,0 +1,6 @@
+type: monster
+hp: 10
+atk: 100
+talk:
+  - - ZzZ...
+    - (자고 있는 것 같다.. 깨우지 말자.)
