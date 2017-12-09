@@ -1,4 +1,4 @@
-package attack
+package main
 
 import (
 	"fmt"

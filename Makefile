@@ -10,6 +10,9 @@ bin/%: src/%.go
 	go build -o $@ $^
 
 run: image
-	docker run -it maze:latest
+	docker run --rm -it maze:latest
 
-.PHONY: image go run
+clean:
+	rm ${TARGETS}
+
+.PHONY: image go run clean
