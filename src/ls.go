@@ -1,4 +1,4 @@
-package attack
+package ls
 
 import (
 	"fmt"
