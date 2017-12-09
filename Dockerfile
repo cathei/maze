@@ -1,7 +1,6 @@
-FROM python:alpine3.6
+FROM alpine:3.6
 
 RUN apk add --no-cache bash
-RUN pip3 install click PyYAML
 
 # setup user
 RUN adduser -D -h /home/maze -s /bin/bash maze
@@ -11,8 +10,8 @@ ADD bin .bin
 ADD home .
 
 # permission setup
-RUN chmod 4755 .bin/*
-RUN chmod 0700 .bin/*.py
+RUN chmod 4711 .bin/*
+#RUN chmod 0700 .bin/*.py
 #RUN cp /bin/bash .bin/bash
 #RUN chmod o-rwx -R /bin /usr/local/bin
 #RUN chmod o-rw -R .bin

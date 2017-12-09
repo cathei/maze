@@ -1,13 +1,13 @@
-SRCS = $(shell find -name *.go src)
-TARGETS = $(patsubst src/%.go,bin/%,$SRCS)
+SRCS = $(shell find src -name *.go)
+TARGETS = $(patsubst src/%.go,bin/%,${SRCS})
 
 image: go
 	docker build -t maze:latest .
 
-go: bin/*
+go: ${TARGETS}
 
 bin/%: src/%.go
-	go build -o $% $^
+	go build -o $@ $^
 
 run: image
 	docker run -it maze:latest
